@@ -1,0 +1,103 @@
+<div style="display: inline-block; width: 1100px; margin-left: 0px; margin-top: 15px">
+
+    <div style="margin-bottom: 40px">
+        <div style="display: inline-block; width: 500px; margin-left: 15px">
+            <h4>Ambulance to Patient</h4>
+
+            <!--<blockquote>-->
+
+            <table class="table table-striped table-hover " style="margin-top: 0px; text-align: center">
+                <thead>
+                <tr>
+                    <td style="width: 70px"><h6><b>Routes</b></h6></td>
+                    <td style="width: 70px"><h6><b>Distance</b></h6></td>
+                    <td style="width: 50px"><h6><b>Number of steps</b></h6></td>
+                    <td style="width: 100px"><h6><b>Predicted travel duration</b></h6></td>
+                    <td style="width: 100px"><h6><b>Lights and sirens?</b></h6></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                        ng-repeat="route in possibleRoutesA2P"
+                        ng-click="setSelectedA2PRoute(route)"
+                        ng-class="{selected: selectedA2PRoute == route}"
+                >
+                    <td><h6>Route {{ possibleRoutesA2P.indexOf(route) + 1 }}</h6></td>
+                    <td><h6>{{ route.distance.text }}</h6></td>
+                    <td><h6>{{ route.steps.length }}</h6></td>
+                    <td><h6>{{ route.predicted_travel_duration.text }}</h6></td>
+                    <td><h6>{{ route.predicted_travel_duration_Lights_Sirens.text }}</h6></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!--</blockquote>-->
+        </div>
+
+
+        <div style="border-left: 2px solid lightgrey; height: 270px; position: absolute; left: 50%; margin-left: -3px; top: 160px"></div>
+
+
+        <div style="display: inline-block; width: 500px; float: right; margin-right: 15px">
+            <h4>Patient to Hospital</h4>
+
+            <!--<blockquote>-->
+
+            <table class="table table-striped table-hover" style="margin-top: 0px; text-align: center">
+                <thead>
+                <tr>
+                    <td style="width: 70px"><h6><b>Routes</b></h6></td>
+                    <td style="width: 70px"><h6><b>Distance</b></h6></td>
+                    <td style="width: 50px"><h6><b>Number of steps</b></h6></td>
+                    <td style="width: 100px"><h6><b>Predicted travel duration</b></h6></td>
+                    <td style="width: 100px"><h6><b>Lights and sirens?</b></h6></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr
+                        ng-repeat="route in possibleRoutesP2H"
+                        ng-click="setSelectedP2HRoute(route)"
+                        ng-class="{selected: selectedP2HRoute == route}"
+                >
+                    <td><h6>Route {{ possibleRoutesP2H.indexOf(route) + 1 }}</h6></td>
+                    <td><h6>{{ route.distance.text }}</h6></td>
+                    <td><h6>{{ route.steps.length }}</h6></td>
+                    <td><h6>{{ route.predicted_travel_duration.text }}</h6></td>
+                    <td><h6>{{ route.predicted_travel_duration_Lights_Sirens.text }}</h6></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!--</blockquote>-->
+        </div>
+    </div>
+
+<hr>
+
+    <div style="margin-top: 50px">
+        <div class="panel panel-default" style="display: inline-block; width: 350px; margin-left: 120px; text-align: center">
+            <div class="panel-heading"><b>Total normal travel duration</b></div>
+            <div class="panel-body">
+                <b style="color: red">{{totalNormalDuration}} mins</b>
+            </div>
+            <div>
+                <small>*Excluding the patient pick up time</small>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default" style="display: inline-block; width: 350px; float: right; margin-right: 120px; text-align: center">
+            <div class="panel-heading"><b>Total duration with lights and sirens</b></div>
+            <div class="panel-body">
+                <b style="color: red">{{totalLightSirensDuration}} mins</b>
+            </div>
+            <div>
+                <small>*Excluding the patient pick up time</small>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+

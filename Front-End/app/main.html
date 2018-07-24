@@ -1,0 +1,167 @@
+<div style="display: inline-block; width: 446px; margin-left: 30px; margin-top: 15px">
+
+    <form ng-submit="getPrediction()" name="form">
+
+        <div class="form-group" style="margin-bottom: 65px">
+            <label class="control-label" for="inputDefault">Ambulance location</label>
+                <div class="col-lg-10">
+                    <select class="form-control" id="select" name="ambulanceLocation" style="width: 430px" ng-model="ambulanceLocationModel" ng-change="assignAmbulanceLocation()">
+                        <option></option>
+                        <option value="-37.731421,144.937676">Ambulance Victoria, Coburg Branch</option>
+                    </select>
+                </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 65px">
+            <label class="control-label" for="inputDefault">Patient location</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="select" name="patientLocation" style="width: 430px" ng-model="patientLocationModel" ng-change="assignPatientLocation()">
+                    <option></option>
+                    <option value="-37.792372,145.058171">6 Arden Ct Kew East VIC 3102</option>
+                    <option value="-37.828304,145.056133">58 Harold St Hawthorn East VIC 3123</option>
+                    <option value="-37.864169,145.053412">16 Willoby Ave, Glen Iris VIC 3146</option>
+                    <option value="-37.757093,145.105767">2 Ians Grove Templestowe Lower VIC 3107</option>
+                    <option value="-37.757691,145.151321">31-33 McDonald Ave Templestowe VIC 3106</option>
+                    <option value="-37.757945,145.196442">294 Tindals Rd Warrandyte VIC 3113</option>
+                    <option value="-37.792939,145.104361">99 Winfield Rd Balwyn North VIC 3104</option>
+                    <option value="-37.829002,145.102333">20 Florence Rd Surrey Hills VIC 3127</option>
+                    <option value="-37.721026,145.107652">4 Ross Ct Yallambie VIC 3085</option>
+                    <option value="-37.684762,145.109081">4 Larcom Ct Greensborough VIC 3088</option>
+                    <option value="-37.720481,145.062339">Macleod Victoria 3085</option>
+                    <option value="-37.684757,145.064435">39 Betula Ave Bundoora VIC 3083</option>
+                    <option value="-37.649161,145.066101">Epping Victoria 3076</option>
+                    <option value="-37.754486,145.014399">370 Victoria Rd Thornbury VIC 3071</option>
+                    <option value="-37.752981,144.969517">76 The Avenue Coburg VIC 3058</option>
+                    <option value="-37.751975,144.923788">50 Hoddle St Essendon VIC 3040</option>
+                    <option value="-37.718061,145.015707">185 Broadway Reservoir VIC 3073</option>
+                    <option value="-37.682645,145.017755">TOTAL EXPRESS 23A Heyington Ave, Thomastown VIC 3074</option>
+                    <option value="-37.791148,145.013159">M3 Fairfield VIC 3078</option>
+                    <option value="-37.826183,145.010897">2 Queen St Richmond VIC 3121</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 65px">
+            <label class="control-label" for="inputDefault">Hospital location</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="select" name="hospitalLocation" style="width: 430px" ng-model="hospitalLocationModel" ng-change="assignHospitalLocation()">
+                    <option></option>
+                    <option value="-37.756231,145.060292">Austin Hospital Heidelberg VIC 3084</option>
+                </select>
+            </div>
+        </div>
+        <!--</div>-->
+
+
+        <!--<div>-->
+
+        <div class="form-group" style="margin-bottom: 65px">
+        <label class="control-label" for="inputDefault">Day in week</label>
+        <div class="col-lg-10">
+                <select class="form-control" id="select" name="day" style="width: 430px">
+                    <option></option>
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                    <option value="0">Sunday</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <div class="form-group" style="display: inline-block; margin-bottom: 65px; width: 210px; margin-right: 21px">
+                <label class="control-label" for="inputDefault">Date</label>
+                <div class="col-lg-10">
+                    <select class="form-control" id="select" name="travelDate" style="width: 193px">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group" style="display: inline-block; margin-bottom: 100px; width: 210px">
+                <label class="control-label" for="inputDefault">Month</label>
+                <div class="col-lg-10">
+                    <select class="form-control" id="select" name="month" style="width: 193px">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 10px; margin-top: -75px">
+            <label class="control-label" for="inputDefault">Time</label>
+            <input type="text" class="form-control" id="inputDefault" name="TravelTime" style="margin-left: 15px; width: 430px">
+        </div>
+
+        <!--<div class="col-lg-10" style="display: inline-block; margin-top: 25px; width: auto">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">Lights and sirens?
+                </label>
+            </div>
+        </div>-->
+
+
+        <div style="float: right; display: inline-block; margin-top: 15px; width: auto">
+            <button class="btn btn-default" type="submit">Predict</button>
+        </div>
+
+    </form>
+
+</div>
+
+<div style="display: inline-block; width: 350px; float: right; margin-right: 200px; margin-top: 35px">
+
+    <div ng-init="requestNewMap()"></div>
+
+    <div ng-show="true">
+        <img id="image"/>
+    </div>
+
+</div>
